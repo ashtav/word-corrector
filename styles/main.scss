@@ -1,0 +1,46 @@
+// sass --watch styles/main.scss:styles/main.css
+html,
+body {
+    font-size: 17px;
+}
+
+.ti {
+    font-size: 18px !important;
+}
+
+.form {
+    position: absolute;
+    width: 300px;
+    pointer-events: none;
+    opacity: 0;
+    transition: .2s;
+
+    &.show {
+        opacity: 1 !important;
+        pointer-events: all;
+    }
+}
+
+.card {
+    box-shadow: none;
+    border-radius: 0;
+
+    .card-body {
+        padding: 35px;
+    }
+
+    .content {
+        .selected {
+            background-color: #e9f7af;
+        }
+
+        span {
+            transition: .1s;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #e9f7af;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+html,
+body {
+  font-size: 17px;
+}
+
+.ti {
+  font-size: 18px !important;
+}
+
+.form {
+  position: absolute;
+  width: 300px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.2s;
+}
+.form.show {
+  opacity: 1 !important;
+  pointer-events: all;
+}
+
+.card {
+  box-shadow: none;
+  border-radius: 0;
+}
+.card .card-body {
+  padding: 35px;
+}
+.card .content .selected {
+  background-color: #e9f7af;
+}
+.card .content span {
+  transition: 0.1s;
+}
+.card .content span:hover {
+  cursor: pointer;
+  background-color: #e9f7af;
+}
+
+/*# sourceMappingURL=main.css.map */
