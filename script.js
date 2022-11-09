@@ -103,7 +103,10 @@ document.addEventListener('mousedown', function (e) {
         init()
     }
 
-    form.classList.remove('show')
+    if (!e.target.classList.contains('form-control')) {
+        form.classList.remove('show')
+    }
+
 })
 
 document.addEventListener('mouseup', function (e) {
