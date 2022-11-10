@@ -80,7 +80,12 @@ function getSelections() {
 }
 
 document.addEventListener('click', e => {
+
+
     if (e.target.classList.contains('word')) {
+        // change all span class to word
+        document.querySelectorAll('.selected').forEach(e => e.attributes.class.value = 'word')
+
         // set range selection
         let range = document.createRange()
         range.selectNode(e.target)
@@ -91,23 +96,18 @@ document.addEventListener('click', e => {
         selection.addRange(range)
 
         getSelections()
+    } else {
+        if (form.classList.contains('show')) {
+            clearSelection()
+            init()
+        }
+
+        if (!e.target.classList.contains('form-control')) {
+            form.classList.remove('show')
+        }
     }
 })
 
-
-
-// mouse listener
-document.addEventListener('mousedown', function (e) {
-    if (form.classList.contains('show')) {
-        clearSelection()
-        init()
-    }
-
-    if (!e.target.classList.contains('form-control')) {
-        form.classList.remove('show')
-    }
-
-})
 
 document.addEventListener('mouseup', function (e) {
     getSelections()
@@ -136,5 +136,3 @@ input.addEventListener('keypress', function (e) {
         init()
     }
 })
-
-
